@@ -1,0 +1,21 @@
+#logo {
+  font-family: 'Lobster Two', serif;
+}
+
+#welcome {
+  background: url(image-path("instagram.png")) no-repeat center center fixed;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#front-page {
+  margin-top: 200px;
+}
+
+#front-panel {
+  padding-bottom: 30px;
+}
