@@ -9,9 +9,10 @@
           <br>
           <% if current_user %>
             <p>hello, <%= current_user.name %></p>
+            <%= link_to "LOGOUT", logout_path, method: :delete %>
           <% else %>
             <div class="col-sm-offset-1 col-sm-10">
-              <%= link_to "LOGIN WITH INSTAGRAM", "https://api.instagram.com/oauth/authorize/?client_id=5972080647444eaea4c2770a5d04843c&redirect_uri=http://localhost:3000/auth/instagram/callback&response_type=code", class: "btn btn-lg btn-default btn-block btn-primary" %>
+              <%= link_to "LOGIN WITH INSTAGRAM", "https://api.instagram.com/oauth/authorize/?client_id=#{ENV['INSTAGRAM_ID']}&redirect_uri=http://localhost:3000/auth/instagram/callback&response_type=code", class: "btn btn-lg btn-default btn-block btn-primary" %>
             </div>
           <% end %>
         </div>
