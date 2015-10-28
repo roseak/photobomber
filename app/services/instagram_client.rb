@@ -31,9 +31,10 @@ class InstagramClient
 
   def get_tagged(tag_name, token)
     params = {
-      q: tag_name
+      q: tag_name,
       access_token: token
     }
 
     JSON.parse(connection.get("tags/search", params).body, symbolize_names: true)
+  end
 end

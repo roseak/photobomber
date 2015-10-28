@@ -21,4 +21,49 @@
 
 #feed {
   padding-top: 70px;
+  background-color: #fafafa;
 }
+
+.profile-small {
+  height: 30px;
+  width: 30px;
+  margin: -5px 10px -5px 10px;
+  display: inline-block;
+}
+
+.username-small, .username-small:hover {
+  color: #125688;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 600;
+  display: inline-block;
+  height: 100%;
+}
+
+.post-top {
+  padding: 10px 10px;
+  display: inline-block;
+}
+
+.panel-default .panel-heading {
+  border-radius: 0px;
+  background-color: white;
+}
+
+.panel-default .panel-footer {
+  border-radius: 0px;
+  background-color: white;
+}
+
+.panel-default .panel-body {
+  border-radius: 0px;
+  background-color: white;
+}
+
+.panel-body {
+  padding: 0px;
+}
+// .post-text {
+//   font-size: 15px;
+// }
