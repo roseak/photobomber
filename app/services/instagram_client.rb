@@ -12,4 +12,12 @@ class InstagramClient
 
     JSON.parse(connection.get("users/self/feed", params).body, symbolize_names: true)
   end
+
+  def get_specific_user_feed(user_id, token)
+    params = {
+      access_token: token
+    }
+
+    JSON.parse(connection.get("users/#{user_id}/media/recent", params).body, symbolize_names: true)
+  end
 end
