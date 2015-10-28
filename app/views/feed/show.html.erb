@@ -1,21 +1,26 @@
-<% @feed[:data].each do |post| %>
-  <div>
-    <div class="user-name">
-      <%= image_tag post[:user][:profile_picture] %>
-      <%= link_to "#{post[:user][:username]}", feed_path(post[:user][:id]) %>
-    </div>
-    <div class="post-picture">
-      <%= image_tag post[:images][:standard_resolution][:url] %>
-    </div>
-    <div class="likes">
-      <%= post[:likes][:count] %> likes
-    </div>
-    <div class="caption">
-      <%= post[:user][:username] %>
-      <%= post[:caption][:text] if post[:caption]%>
-    </div>
-    <div class="comments">
-      <%= post[:comments][:data] unless post[:comments][:data].empty? %>
-    </div>
+<body id="feed">
+  <%= render 'layouts/navbar' %>
+  <div class="user-name">
+    <%= image_tag @feed[:data].first[:user][:profile_picture] %>
+    <%= link_to "#{@feed[:data].first[:user][:username]}",
+        feed_path(@feed[:data].first[:user][:id]) %>
   </div>
-<% end %>
+
+  <% @feed[:data].each do |post| %>
+    <div>
+      <div class="post-picture">
+        <%= image_tag post[:images][:standard_resolution][:url] %>
+      </div>
+      <div class="likes">
+        <%= post[:likes][:count] %> likes
+      </div>
+      <div class="caption">
+        <%= post[:user][:username] %>
+        <%= post[:caption][:text] if post[:caption]%>
+      </div>
+      <div class="comments">
+        <%= post[:comments][:data] unless post[:comments][:data].empty? %>
+      </div>
+    </div>
+  <% end %>
+</body>

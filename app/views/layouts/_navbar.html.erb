@@ -13,8 +13,8 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right" id="navbar">
-            <li><%= "Search" %><span class="sr-only">(current)</span></li>
-            <li><%= "#{current_user.nickname}" %><span class="sr-only">(current)</span></li>
+            <!-- <li></%= "Search" %><span class="sr-only">(current)</span></li> -->
+            <li><%= link_to "#{current_user.nickname}", feed_path(current_user.uid) %><span class="sr-only">(current)</span></li>
           </ul>
         </div>
       </div>
