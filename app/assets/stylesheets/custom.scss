@@ -1,5 +1,6 @@
 #logo {
   font-family: 'Lobster Two', serif;
+  // color: white;
 }
 
 #welcome {
@@ -13,9 +14,7 @@
 }
 
 #front-page {
-  margin-top: 200px;
-}
-
-#front-panel {
+  background: rgba(255, 255, 255, .92);
+  margin-top: 150px;
   padding-bottom: 30px;
 }

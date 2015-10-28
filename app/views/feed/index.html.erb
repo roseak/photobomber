@@ -1,0 +1,23 @@
+<%= render 'layouts/navbar' %>
+
+<% @feed[:data].each do |post| %>
+  <div>
+    <div class="user-name">
+      <%= image_tag post[:user][:profile_picture] %>
+      <%= post[:user][:username] %>
+    </div>
+    <div class="post-picture">
+      <%= image_tag post[:images][:standard_resolution][:url] %>
+    </div>
+    <div class="likes">
+      <%= post[:likes][:count] %> likes
+    </div>
+    <div class="caption">
+      <%= post[:user][:username] %>
+      <%= post[:caption][:text] %>
+    </div>
+    <div class="comments">
+      <%= post[:comments][:data] %>
+    </div>
+  </div>
+<% end %>
