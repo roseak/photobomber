@@ -14,7 +14,6 @@ gem 'bootstrap-sass'
 gem 'bootswatch-rails'
 gem 'bootstrap_form'
 gem 'hurley'
-gem 'httparty'
 
 group :development, :test do
   gem 'rspec-rails'
