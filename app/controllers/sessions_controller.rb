@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
     if user = User.from_oauth(user_data)
       session[:user_id] = user.id
-      redirect_to feed_path
+      redirect_to feed_index_path
     else
       redirect_to root_path
     end
