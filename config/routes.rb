@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tagged/index'
+
   get 'trending/index'
   root 'welcome#index'
   get '/auth/instagram', as: :login
