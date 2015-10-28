@@ -22,9 +22,9 @@
         <div class="panel-footer">
           <% if post[:likes][:count] > 4 %>
           <p> <%= post[:likes][:count] %> likes</p>
-          <% else %>
+          <% elsif post[:likes][:count] > 0 %>
             <% post[:likes][:data].each do |like| %>
-            <%= link_to like[:username], feed_path(like[:id]), class: "username-small" %>
+              <%= link_to like[:username], feed_path(like[:id]), class: "username-small" %>
             <% end %>
             like this
           <% end %>
@@ -42,8 +42,8 @@
           </div>
           <hr>
           <div class="row">
-            <div class="col-sm-1" id="heart">
-              <i class="fa fa-heart-o fa-lg"></i>
+            <div class="col-sm-1">
+              <%= image_tag "heart.png", id: "heart" %>
             </div>
             <div class="col-sm-9" id="comment">
               <input type="text" class="form-control" placeholder="Add a comment...">
