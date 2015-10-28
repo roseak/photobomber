@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/auth/instagram', as: :login
   get '/auth/instagram/callback', to: 'sessions#create'
   delete '/logout', as: :logout, to: 'sessions#destroy'
+  get 'feed', to: 'feed#index'
+  get 'profile/:id', to: 'profile#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

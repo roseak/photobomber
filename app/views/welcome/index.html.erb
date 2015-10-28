@@ -1,22 +1,19 @@
 <body id="welcome">
-  <div class="row" id="front-page">
-    <div class="col-lg-4 col-lg-offset-4 text-center v-center">
-      <div class="panel">
-        <div class="panel-body" id="front-panel">
-          <h1 id="logo">Photobomber</h1>
-          <p class="lead">share your world</p>
-
-          <br>
-          <% if current_user %>
-            <p>hello, <%= current_user.name %></p>
-            <%= link_to "LOGOUT", logout_path, method: :delete %>
-          <% else %>
-            <div class="col-sm-offset-1 col-sm-10">
-              <%= link_to "LOGIN WITH INSTAGRAM", "https://api.instagram.com/oauth/authorize/?client_id=#{ENV['INSTAGRAM_ID']}&redirect_uri=#{ENV['CALLBACK']}&response_type=code", class: "btn btn-lg btn-default btn-block btn-primary" %>
-            </div>
-          <% end %>
-        </div>
+  <div class="container col-lg-4 col-lg-offset-4 text-center v-center" id="front-page">
+    <h1 id="logo">Photobomber</h1>
+    <p class="lead">share your world</p>
+    <% if current_user %>
+      <h3><%= current_user.name %></h3><br>
+      <div class="col-md-6">
+        <%= link_to "FEED", feed_path, class: "btn btn-lg btn-default btn-block btn-primary" %>
       </div>
-    </div>
+      <div class="col-md-6">
+        <%= link_to "LOGOUT", logout_path, method: :delete, class: "btn btn-lg btn-default btn-block btn-primary" %>
+      </div>
+    <% else %>
+      <div class="col-sm-offset-1 col-sm-10">
+        <%= link_to "LOGIN WITH INSTAGRAM", instagram_login_path, class: "btn btn-lg btn-default btn-block btn-primary" %>
+      </div>
+    <% end %>
   </div>
 </body>

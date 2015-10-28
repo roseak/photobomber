@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -12,18 +11,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'figaro'
 gem 'bootstrap-sass'
-gem 'bootstrap3-rails'
+gem 'bootswatch-rails'
+gem 'bootstrap_form'
+gem 'hurley'
+gem 'httparty'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
   gem 'rspec-rails'
   gem 'pry'
 end
 
 group :development do
-  # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem "better_errors"
 end
 
 group :production do
