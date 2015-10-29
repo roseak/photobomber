@@ -24,6 +24,13 @@
   background-color: #fafafa;
 }
 
+#profile-page {
+  padding-top: 120px;
+  padding-left: 170px;
+  padding-right: 170px;
+  background-color: #fafafa;
+}
+
 .profile-small {
   height: 30px;
   width: 30px;
@@ -69,4 +76,61 @@
   height: 20px;
   width: 20px;
   margin-top: 10px;
+}
+
+#profile-large {
+
+}
+
+#avatar {
+  height: 152px;
+  margin-bottom: -7px;
+  margin-top: -7px;
+  width: 152px;
+}
+
+.profile-squares {
+  margin-bottom: 30px;
+}
+
+#nameage {
+  font-size: 34px;
+  font-weight: 300;
+  color: #4b4f54;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 40px;
+}
+
+#full-nameage {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+#nameage-search {
+  font-size: 25px;
+  font-weight: 300;
+  color: #4b4f54;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 40px;
+}
+
+#full-nameage-search {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 40px;
+}
+
+.user-info {
+  margin-bottom: 50px;
+}
+
+.search {
+  margin-bottom: 40px;
+}
+
+.search-names {
+  margin-top: 20px;
 }

@@ -8,7 +8,7 @@ class FeedControllerTest < ActionController::TestCase
                       image: "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-19/11375311_129968644011289_1395263579_a.jpg",
                       bio: "300 headstands to go.",
                       website: "",
-                      token: "31027128.5972080.7567f7f4e1e9491db50dbd3a4ce79c28")
+                      token: ENV["SAMPLE_USER_TOKEN"])
     session[:user_id] = user.id
 
     VCR.use_cassette("_rosiekohn_data") do
@@ -26,14 +26,14 @@ class FeedControllerTest < ActionController::TestCase
                       image: "https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-19/11375311_129968644011289_1395263579_a.jpg",
                       bio: "300 headstands to go.",
                       website: "",
-                      token: "31027128.5972080.7567f7f4e1e9491db50dbd3a4ce79c28")
+                      token: ENV["SAMPLE_USER_TOKEN"])
     session[:user_id] = user.id
 
-    VCR.use_cassette("_teafortoucan_data") do
-      get :show, id: "316234621"
+    VCR.use_cassette("_anniebuckmaster_data") do
+      get :show, id: "29859906"
       assert_response 200
-      assert_match /Hey Margo/, response.body
-      assert_match /teafortoucan/, response.body
+      assert_match /buckcinibaby/, response.body
+      assert_match /abigailmancini/, response.body
     end
   end
 end

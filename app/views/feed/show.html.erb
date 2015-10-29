@@ -1,26 +1,28 @@
-<body id="feed">
+<body id="profile-page">
   <%= render 'layouts/navbar' %>
-  <div class="user-name">
-    <%= image_tag @feed[:data].first[:user][:profile_picture] %>
-    <%= link_to "#{@feed[:data].first[:user][:username]}",
-        feed_path(@feed[:data].first[:user][:id]) %>
+  <div class="col-lg-8 col-lg-offset-2 user-info">
+    <div class="col-lg-4"><%= image_tag @feed[:data].first[:user][:profile_picture],
+         class: "img-responsive img-circle", id: "profile-large" %></div>
+    <div class="col-lg-4" id="nameage"><%= @feed[:data].first[:user][:username] %></div>
   </div>
-
-  <% @feed[:data].each do |post| %>
-    <div>
-      <div class="post-picture">
-        <%= image_tag post[:images][:standard_resolution][:url] %>
+  <div class="row">
+    <% @feed[:data].each do |post| %>
+      <div class="col-lg-4">
+        <div class="panel-body profile-squares">
+          <%= image_tag post[:images][:standard_resolution][:url], class: "img-responsive" %>
+        </div>
       </div>
-      <div class="likes">
-        <%= post[:likes][:count] %> likes
-      </div>
-      <div class="caption">
-        <%= post[:user][:username] %>
-        <%= post[:caption][:text] if post[:caption]%>
-      </div>
-      <div class="comments">
-        <%= post[:comments][:data] unless post[:comments][:data].empty? %>
-      </div>
-    </div>
-  <% end %>
+        <!-- <div class="likes"> -->
+          <!-- </%= post[:likes][:count] %> likes -->
+        <!-- </div> -->
+        <!-- <div class="caption"> -->
+          </%= post[:user][:username] %>
+          </%= post[:caption][:text] if post[:caption]%>
+        <!-- </div> -->
+        <!-- <div class="comments"> -->
+          </%= post[:comments][:data] unless post[:comments][:data].empty? %>
+        <!-- </div> -->
+      <!-- </div> -->
+    <% end %>
+  </div>
 </body>

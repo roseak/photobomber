@@ -1,9 +1,16 @@
 <body id="feed">
   <%= render 'layouts/navbar' %>
-
-  <% @users[:data].each do |user| %>
-    <p><%= link_to user[:username], feed_path(user[:username]) %>
-    <%= user[:full_name] %>
-    <%= image_tag user[:profile_picture] %></p>
-  <% end %>
+  <!-- <div class="col-lg-6 col-lg-offset-3"> -->
+    <% @users[:data].each do |user| %>
+      <div class="row">
+        <div class="col-lg-2 col-lg-offset-4 search">
+          <%= image_tag user[:profile_picture], class: "img-responsive img-circle" %>
+        </div>
+        <div class="col-lg-6 search search-names">
+          <%= link_to user[:username], feed_path(user[:id]), id: "nameage-search" %>
+          <div id="full-nameage-search"><%= user[:full_name] %></div>
+        </div>
+      </div>
+    <% end %>
+  <!-- </div> -->
 </body>

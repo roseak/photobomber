@@ -19,7 +19,7 @@ class InstagramClient
   end
 
   def search_name(name)
-    get_json("users/search", {q: name})
+    get_json("users/search", { q: name })
   end
 
   def params
