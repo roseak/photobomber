@@ -4,7 +4,7 @@
     <% @users[:data].each do |user| %>
       <div class="row">
         <div class="col-lg-2 col-lg-offset-4 search">
-          <%= image_tag user[:profile_picture], class: "img-responsive img-circle" %>
+          <%= image_tag user[:profile_picture], class: "img-responsive img-circle", id: "profile-large" %>
         </div>
         <div class="col-lg-6 search search-names">
           <%= link_to user[:username], feed_path(user[:id]), id: "nameage-search" %>

@@ -38,6 +38,11 @@
   display: inline-block;
 }
 
+#profile-large {
+  border-radius: 50%;
+  border: 1px solid #cccfd0;
+}
+
 .username-small, .username-small:hover {
   color: #125688;
   text-decoration: none;
