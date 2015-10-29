@@ -9,20 +9,48 @@
     <% @feed[:data].each do |post| %>
       <div class="col-lg-4">
         <div class="panel-body profile-squares">
-          <%= image_tag post[:images][:standard_resolution][:url], class: "img-responsive" %>
+          <a href="#" data-toggle="modal" data-target="#photo-<%= post[:id] %>">
+            <%= image_tag post[:images][:standard_resolution][:url], class: "img-responsive" %>
+          </a>
         </div>
       </div>
-        <!-- <div class="likes"> -->
-          <!-- </%= post[:likes][:count] %> likes -->
-        <!-- </div> -->
-        <!-- <div class="caption"> -->
-          </%= post[:user][:username] %>
-          </%= post[:caption][:text] if post[:caption]%>
-        <!-- </div> -->
-        <!-- <div class="comments"> -->
-          </%= post[:comments][:data] unless post[:comments][:data].empty? %>
-        <!-- </div> -->
-      <!-- </div> -->
+
+      <div id="photo-<%= post[:id] %>"class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content col-lg-12">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              <div class="col-lg-8">
+                <%= image_tag post[:images][:standard_resolution][:url], class: "img-responsive modal-image" %>
+              </div>
+              <div class="col-lg-4">
+                <div class="modal-break">
+                  <%= image_tag post[:user][:profile_picture],
+                      class: "img-responsive img-circle profile-small" %>&nbsp;
+                  <%= link_to "#{post[:user][:username]}",
+                      feed_path(post[:user][:id]), class: "username-small" %>
+                </div>
+                <hr>
+                <div class="likes"><%= post[:likes][:count] %> likes</div>
+                <p><%= link_to post[:user][:username], feed_path(post[:user][:id]), class: "username-small" %>
+                   <%= post[:caption][:text] if post[:caption]%></p>
+                <div class="comments">
+                   <% unless post[:comments][:data].empty? %>
+                     <% post[:comments][:data].each do |comment| %>
+                       <p><%= link_to comment[:from][:username], feed_path(comment[:from][:id]), class: "username-small" %>
+                          <%= comment[:text] %></p>
+                     <% end %>
+                   <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer"></div>
+          </div>
+        </div>
+      </div>
+
     <% end %>
   </div>
 </body>
