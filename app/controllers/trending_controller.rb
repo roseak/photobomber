@@ -6,6 +6,6 @@ class TrendingController < ApplicationController
   private
 
   def feed
-    InstagramClient.new.get_trending_feed(current_user.token)
+    InstagramClient.new(current_user.token).get_trending_feed
   end
 end

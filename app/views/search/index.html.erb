@@ -1,0 +1,9 @@
+<body id="feed">
+  <%= render 'layouts/navbar' %>
+
+  <% @users[:data].each do |user| %>
+    <p><%= link_to user[:username], feed_path(user[:username]) %>
+    <%= user[:full_name] %>
+    <%= image_tag user[:profile_picture] %></p>
+  <% end %>
+</body>

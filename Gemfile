@@ -16,8 +16,8 @@ gem 'bootstrap_form'
 gem 'hurley'
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'pry'
+  gem 'capybara'
 end
 
 group :development do
@@ -27,4 +27,10 @@ end
 
 group :production do
   gem 'rails_12factor'
+end
+
+group :test do
+  gem 'vcr'
+  gem 'webmock'
+  gem 'simplecov'
 end
