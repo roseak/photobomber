@@ -10,12 +10,15 @@
           <span class="icon-bar"></span>
         </button>
           <%= link_to "Photobomber", feed_index_path, class: "navbar-brand navbar-left", id: "logo" %>
+          <ul class="nav navbar-nav">
+          <li id="search-bar"><%= form_tag(search_path, method: "get") do %>
+                <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
+              <% end %></li>
+        </ul>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav navbar-right" id="navbar">
-            <li><%= form_tag(search_path, method: "get") do %>
-                  <%= text_field_tag :search, params[:search], placeholder: "Search Users" %>
-                <% end %>
+            <li>
             <li><%= link_to "Trending", trending_index_path %><span class="sr-only">(current)</span></li>
             <li><%= link_to "#{current_user.nickname}", feed_path(current_user.uid) %>
                 <span class="sr-only">(current)</span></li>
