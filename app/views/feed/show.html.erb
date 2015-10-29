@@ -1,10 +1,21 @@
 <body id="profile-page">
   <%= render 'layouts/navbar' %>
-  <div class="col-lg-8 col-lg-offset-2 user-info">
-    <div class="col-lg-4"><%= image_tag @feed[:data].first[:user][:profile_picture],
-         class: "img-responsive img-circle", id: "profile-large" %></div>
-    <div class="col-lg-4" id="nameage"><%= @feed[:data].first[:user][:username] %></div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 user-info">
+      <div class="col-lg-4"><%= image_tag @feed[:data].first[:user][:profile_picture],
+           class: "img-responsive img-circle", id: "profile-large" %></div>
+      <div class="col-lg-8">
+        <div id="nameage"><%= @feed[:data].first[:user][:username] %></div>
+        <div id="full-nameage-profile"><%= @user_data[:data][:full_name] %></div>
+        <div id="bio"><%= @user_data[:data][:bio] %></div>
+        <div id="website"><%= link_to @user_data[:data][:website], @user_data[:data][:website] %></div>
+        <div id="stats"><%= "#{@user_data[:data][:counts][:media]} posts" %>&nbsp;&nbsp;
+                  <%= "#{@user_data[:data][:counts][:follows]} followers" %>&nbsp;&nbsp;
+                  <%= "#{@user_data[:data][:counts][:followed_by]} following" %></div>
+      </div>
+    </div>
   </div>
+
   <div class="row">
     <% @feed[:data].each do |post| %>
       <div class="col-lg-4">

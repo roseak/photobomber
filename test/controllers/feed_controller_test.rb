@@ -29,11 +29,11 @@ class FeedControllerTest < ActionController::TestCase
                       token: ENV["SAMPLE_USER_TOKEN"])
     session[:user_id] = user.id
 
-    VCR.use_cassette("_anniebuckmaster_data") do
+    VCR.use_cassette("_anniebuckmaster_user_data") do
       get :show, id: "29859906"
       assert_response 200
-      assert_match /buckcinibaby/, response.body
-      assert_match /abigailmancini/, response.body
+      assert_match /annie mancini/, response.body
+      assert_match /454/, response.body
     end
   end
 end

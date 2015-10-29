@@ -7,6 +7,7 @@ class FeedController < ApplicationController
 
   def show
     @feed = feed(params[:id])
+    @user_data = user_data(params[:id])
     # @feed = InstagramPost.feed(current_user.token, params[:id])
   end
 
@@ -22,6 +23,10 @@ class FeedController < ApplicationController
 
   def feed(user_id)
     InstagramClient.new(current_user.token).get_specific_user_feed(user_id)
+  end
+
+  def user_data(user_id)
+    InstagramClient.new(current_user.token).get_user_data(user_id)
   end
 end
 

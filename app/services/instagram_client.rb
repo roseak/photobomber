@@ -14,6 +14,10 @@ class InstagramClient
     get_json("users/#{user_id}/media/recent")
   end
 
+  def get_user_data(user_id)
+    get_json("users/#{user_id}")
+  end
+
   def get_trending_feed
     get_json("media/popular")
   end
