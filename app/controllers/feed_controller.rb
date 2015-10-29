@@ -8,7 +8,6 @@ class FeedController < ApplicationController
   def show
     @feed = feed(params[:id])
     @user_data = user_data(params[:id])
-    # @feed = InstagramPost.feed(current_user.token, params[:id])
   end
 
   private
@@ -29,13 +28,3 @@ class FeedController < ApplicationController
     InstagramClient.new(current_user.token).get_user_data(user_id)
   end
 end
-
-# class InstagramPost
-
-#  def self.feed(token, user_id)
-#    feed_items = InstagramClient.new(token).get_specific_user_feed(user_id)
-#    feed_items.map { |feed_item|
-#      OpenStruct.new(location: feed_item[:data][:location])
-#    }
-#  end
-# end
