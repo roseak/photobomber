@@ -14,8 +14,8 @@ class FeedControllerTest < ActionController::TestCase
     VCR.use_cassette("_rosiekohn_data") do
       get :index
       assert_response 200
-      assert_match /jakepeppers/, response.body
-      assert_match /huckberry/, response.body
+      assert_match /Look at that dapper dude shake it!/, response.body
+      assert_match /deebro_/, response.body
     end
   end
 

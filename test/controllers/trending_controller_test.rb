@@ -14,8 +14,8 @@ class TrendingControllerTest < ActionController::TestCase
     VCR.use_cassette("_trending_data") do
       get :index
       assert_response 200
-      assert_match /Legs fo dayzzz/, response.body
-      assert_match /imarah_robinson/, response.body
+      assert_match /Thanks for the 6k/, response.body
+      assert_match /billionladies/, response.body
     end
   end
 end
